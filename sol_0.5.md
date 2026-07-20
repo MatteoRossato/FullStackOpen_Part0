@@ -4,13 +4,13 @@ sequenceDiagram
     participant server
 
     Note right of browser: The user writes a note and clicks "Save"
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/notes
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_notes
     activate server
     Note right of browser: The request body contains the new note (form data)
     server-->>browser: HTTP 302 (redirect to /notes)
     deactivate server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/new_notes
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
     server-->>browser: HTML document
     deactivate server
