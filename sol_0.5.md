@@ -3,12 +3,11 @@ sequenceDiagram
     participant browser
     participant server
 
-    Note right of browser: L'utente scrive una nota e clicca "Save"
-
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    Note right of browser: Il corpo della richiesta contiene la nuova nota (form data)
+    Note right of browser: The user writes a note and clicks "Save"
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
-    server-->>browser: HTTP 302 (redirect a /notes)
+    Note right of browser: The request body contains the new note (form data)
+    server-->>browser: HTTP 302 (redirect to /notes)
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
@@ -18,12 +17,12 @@ sequenceDiagram
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
-    server-->>browser: the css file
+    server-->>browser: CSS file
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
-    server-->>browser: the JavaScript file
+    server-->>browser: JS file
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
