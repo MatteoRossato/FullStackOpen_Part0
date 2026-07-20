@@ -10,7 +10,7 @@ sequenceDiagram
     server-->>browser: HTTP 302 (redirect to /notes)
     deactivate server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/new_notes
     activate server
     server-->>browser: HTML document
     deactivate server
