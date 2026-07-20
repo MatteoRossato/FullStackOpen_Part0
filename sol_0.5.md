@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
     participant browser
     participant server
@@ -30,4 +31,4 @@ sequenceDiagram
     server-->>browser: [{ "content": "...", "date": "..." }, ... ]
     deactivate server
 
-    Note right of browser: Il browser esegue la callback che renderizza le note
+```
